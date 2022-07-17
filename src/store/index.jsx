@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import users from "../components/Users/usersSlice";
-import items from "../components/Unknowns/unknownSlice";
+import users from "../components/users/usersSlice";
+import items from "../components/colors/colorsSlice";
 import 'antd/dist/antd.css';
 
 const store = configureStore({

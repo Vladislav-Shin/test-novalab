@@ -24,7 +24,7 @@ const Users = () => {
 
       return (
         <Link key={id} to={`/users/${id}`}>
-          <Card  hoverable style={{ width: 250, border: '1px solid #000'}} cover={<img alt={img} src={img} />}>
+          <Card  hoverable style={{ width: 250 }} cover={<img alt={img} src={img} />}>
             <Meta title={`${name} ${last_name}`} description={email} />
           </Card>
         </Link>

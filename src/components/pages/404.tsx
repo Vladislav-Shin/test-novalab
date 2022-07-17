@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import AppHeader from "../AppHeader/AppHeader";
+import AppHeader from "../appHeader/AppHeader";
 import ErrorMessage from "../errorMessage/ErrorMessage";
-import Footer from './../Footer/Footer';
+import Footer from '../footer/Footer';
 
 const ErrorPage: React.FC = () => {
   return (

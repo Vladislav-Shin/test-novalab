@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { itemsFetched } from "./unknownSlice";
+import { itemsFetched } from "./colorsSlice";
 import useService from "../../services/Services";
 import { Card } from "antd";
-import "./unknowns.scss";
+import "./colors.scss";
 
 const Unknowns = () => {
   const { items } = useSelector((state) => state.items);

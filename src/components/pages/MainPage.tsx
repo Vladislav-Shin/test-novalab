@@ -1,7 +1,6 @@
-import AppHeader from "../AppHeader/AppHeader";
-import Footer from "../Footer/Footer";
-import Forma from "../form/form";
-import Users from "../Users/Users";
+import AppHeader from "../appHeader/AppHeader";
+import Footer from "../footer/Footer";
+import Users from "../users/Users";
 
 const MainPage: React.FC = () => {
   return (
@@ -10,7 +9,6 @@ const MainPage: React.FC = () => {
       <main className="main">
         <div className="container">
           <Users />
-          {/* <Forma /> */}
         </div>
       </main>
       <Footer />

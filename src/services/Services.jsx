@@ -1,7 +1,7 @@
 import { useHttp } from "../hooks/http.hook";
 
 const useService = () => {
-  const { request } = useHttp();
+  const { request, process, setProcess } = useHttp();
   const _apiBase = "https://reqres.in/api";
 
   const getAllUsers = async () => {
@@ -20,8 +20,19 @@ const useService = () => {
   };
 
   const changeUsers = async (id, data) => {
-    const res = await request(`${_apiBase}/users/${id}`, "PUT", (data));
+    const res = await request(`${_apiBase}/users/${id}`, "PUT", JSON.stringify(data));
     return res;
+  }
+
+
+  const registrationUser = async (body) => {
+    const json = JSON.stringify(body);
+    return await request('https://reqres.in/api/register', 'POST', json);
+  }
+
+  const logInUser = async (body) => {
+    const json = JSON.stringify(body);
+    return await request('https://reqres.in/api/login', 'POST', json);
   }
 
   const _transformUsers = (users) => {
@@ -48,7 +59,11 @@ const useService = () => {
     getAllUsers,
     getUser,
     getAllUnknown,
-    changeUsers
+    changeUsers,
+    registrationUser,
+    logInUser,
+    process,
+    setProcess
   };
 };
 

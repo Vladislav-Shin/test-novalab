@@ -1,13 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
+import logo from '../../resources/icons/logo.svg';
+
 import "./AppHeader.scss";
 
 const AppHeader = (): JSX.Element => {
+  const isLogged = localStorage.getItem('token') ? true : false;
+
   return (
     <header className="header">
       <div className="container">
         <div className="header__inner">
           <div className="header__logo">
-            <Link to="/">Logo</Link>
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="header__navbar">
             <ul>
@@ -15,7 +21,7 @@ const AppHeader = (): JSX.Element => {
                 <NavLink
                   end
                   style={({ isActive }) => ({
-                    color: isActive ? "#9f0013" : "inherit"
+                    color: isActive ? "#c4c3c3" : "inherit"
                   })}
                   to="/">
                   Home
@@ -24,7 +30,7 @@ const AppHeader = (): JSX.Element => {
               <li>
                 <NavLink
                   style={({ isActive }) => ({
-                    color: isActive ? "#9f0013" : "inherit"
+                    color: isActive ? "#c4c3c3" : "inherit"
                   })}
                   to="/users">
                   Users
@@ -33,21 +39,43 @@ const AppHeader = (): JSX.Element => {
               <li>
                 <NavLink
                   style={({ isActive }) => ({
-                    color: isActive ? "#9f0013" : "inherit"
+                    color: isActive ? "#c4c3c3" : "inherit"
                   })}
-                  to="/unknown">
-                  Unknown
+                  to="/colors">
+                  Colors
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  style={({ isActive }) => ({
-                    color: isActive ? "#9f0013" : "inherit"
-                  })}
-                  to="/profile">
-                  Профиль
-                </NavLink>
-              </li>
+                {isLogged ? (
+                  <li>
+                    <NavLink
+                      style={({ isActive }) => ({
+                        color: isActive ? "#c4c3c3" : "inherit"
+                      })}
+                      to="/profile">
+                      Profile
+                    </NavLink>
+                  </li>
+                ) : (
+                  <li className="header__link-form">
+                    <NavLink
+                      style={({ isActive }) => ({
+                        color: isActive ? "#c4c3c3" : "inherit",
+                        marginRight: '5px'
+                      })}
+                      to="/sign-in">
+                      Log in
+                    </NavLink>
+                    /
+                    <NavLink
+                      style={({ isActive }) => ({
+                        color: isActive ? "#c4c3c3" : "inherit",
+                        marginLeft: '5px'
+                      })}
+                      to="/registration">
+                      Registration
+                    </NavLink>
+                  </li>
+                )}
             </ul>
           </div>
         </div>

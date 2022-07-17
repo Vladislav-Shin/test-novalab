@@ -4,8 +4,8 @@ import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IUsers } from "../../../interfaces/interface";
 import useService from "../../../services/Services";
-import AppHeader from "../../AppHeader/AppHeader";
-import Footer from "../../Footer/Footer";
+import AppHeader from "../../appHeader/AppHeader";
+import Footer from "../../footer/Footer";
 
 import "./singlePage.scss";
 

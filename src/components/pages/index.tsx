@@ -1,7 +1,7 @@
-import SinglePage from './SinglePage/SinglePage';
+import SinglePage from './singlePage/SinglePage';
 import MainPage from './MainPage';
 import ErrorPage from './404';
-import UnknownPage from './UnknownPage/UnknownPage';
-import ProfilePage from './ProfilePage/ProfilePage'
+import ColorsPage from './colorsPage/ColorsPage';
+import ProfilePage from './profilePage/ProfilePage'
 
-export { SinglePage, MainPage, UnknownPage, ErrorPage, ProfilePage }
+export { SinglePage, MainPage, ColorsPage, ErrorPage, ProfilePage }

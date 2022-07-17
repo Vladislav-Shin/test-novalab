@@ -1,0 +1,24 @@
+.footer {
+  background-color: rgb(55, 55, 55);
+
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 18px;
+  }
+
+  .footer__title {
+    color: #fff;
+  }
+
+  &__github {
+    display: flex;
+    align-items: center;
+    img {
+      max-width: 50px;
+      margin-right: 15px;
+    }
+  }
+}

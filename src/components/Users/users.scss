@@ -4,6 +4,11 @@
   gap: 40px;
   padding: 50px 0;
 
+  .ant-card {
+    border: none;
+    background-color: #f8f8f8;
+  }
+
   .ant-card-meta {
     justify-content: center;
   }
