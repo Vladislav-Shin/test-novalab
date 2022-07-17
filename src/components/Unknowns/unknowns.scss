@@ -1,0 +1,10 @@
+.items {
+  padding: 40px 0;
+  .items__row {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    gap: 20px;
+  }
+}
