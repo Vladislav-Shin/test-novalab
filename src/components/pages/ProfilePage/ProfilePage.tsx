@@ -3,8 +3,7 @@ import AppHeader from '../../appHeader/AppHeader';
 import Footer from '../../footer/Footer';
 import { Card } from 'antd';
 
-const ProfilePage = () => {
-  const id = localStorage.getItem('idUser')
+const ProfilePage:React.FC = () => {
   return (
     <>
       <AppHeader />
@@ -18,9 +17,8 @@ const ProfilePage = () => {
                 src="https://joeschmoe.io/api/v1/random"
               />
             }
-
           >
-            <h2>Пользователь - {id}</h2>
+            <h2>Пользователь</h2>
           </Card>
         </div>
       </main>

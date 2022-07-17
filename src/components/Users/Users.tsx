@@ -1,14 +1,14 @@
 import { Card } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useService from "../../services/Services";
-import "./users.scss";
 import { usersFetched } from "./usersSlice";
+import { IUsers } from "../../interfaces/interface";
+import "./users.scss";
 
 const Users = () => {
-  const { users } = useSelector((state) => state.users);
-  const [count, setCount] = useState(1);
+  const { users } = useSelector((state: any) => state.users);
   const dispatch = useDispatch();
   const { getAllUsers } = useService();
   const { Meta } = Card;
@@ -18,7 +18,7 @@ const Users = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const renderItems = (users) => {
+  const renderItems = (users: IUsers[]) => {
     return users.map((item) => {
       const { id, name, last_name, email, img } = item;
 

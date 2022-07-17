@@ -2,14 +2,13 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { itemsFetched } from "./colorsSlice";
 import useService from "../../services/Services";
+import { IUnknown } from "../../interfaces/interface";
 import { Card } from "antd";
 import "./colors.scss";
 
-const Unknowns = () => {
-  const { items } = useSelector((state) => state.items);
+const Unknowns:React.FC = () => {
+  const { items } = useSelector((state:any) => state.items);
   const dispatch = useDispatch();
-  const { Meta } = Card;
-
   const { getAllUnknown } = useService();
 
   useEffect(() => {
@@ -17,8 +16,8 @@ const Unknowns = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const itemsRender = (items) => {
-    return items.map((item) => {
+  const itemsRender = (items: any) => {
+    return items.map((item: IUnknown) => {
       const { id, name, year, color, value } = item;
 
       return (

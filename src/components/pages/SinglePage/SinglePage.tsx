@@ -19,10 +19,12 @@ const SinglePage = () => {
 
   useEffect(() => {
     getUser(id).then((res) => setUser(res));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     getUser(id).then((res) => setValue(`${res.name}`));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const inputHandler = () => {
@@ -38,8 +40,8 @@ const SinglePage = () => {
     const newData = { ...user, name: value };
 
     changeUsers(user?.id, newData)
-      .then(res => console.log(res)
-      )
+      .then(res => console.log(res))
+      inputRef.current?.blur()
   }
 
   const goBack = () => navigate(-1);
@@ -52,17 +54,13 @@ const SinglePage = () => {
       <main className="main">
         <div className="container">
           <div className="singlePage">
-            {/*             <Card key={id} hoverable style={{ border: "1px solid #000", width: 250 }} cover={<img style={{ width: "100%" }} alt={user?.img} src={user?.img} />}>
-              <Meta title={`${user?.name} ${user?.last_name}`} description={user?.email} />
-              <Button type="primary" onClick={goBack}>Назад</Button>
-            </Card> */}
             <Card
               style={{ width: 300 }}
               cover={<img alt={user?.img} src={user?.img} />}
               actions={[
                 <Button type="primary" onClick={goBack}>
                   Назад
-                </Button>,
+                </Button>
               ]}
             >
               <div className="wrapper-input">

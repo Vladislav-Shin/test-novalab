@@ -8,8 +8,8 @@ const useService = () => {
     const res = await request(`${_apiBase}/users`);
     return res.data.map(_transformUsers)
   };
-  
-  const getUser = async (id) => {
+
+  const getUser = async (id: any) => {
     const res = await request(`${_apiBase}/users/${id}`);
     return _transformUsers(res.data)
   };
@@ -19,23 +19,23 @@ const useService = () => {
     return res.data.map(_transformUnknown)
   };
 
-  const changeUsers = async (id, data) => {
+  const changeUsers = async (id: any, data: any) => {
     const res = await request(`${_apiBase}/users/${id}`, "PUT", JSON.stringify(data));
     return res;
   }
 
 
-  const registrationUser = async (body) => {
+  const registrationUser = async (body: any) => {
     const json = JSON.stringify(body);
     return await request('https://reqres.in/api/register', 'POST', json);
   }
 
-  const logInUser = async (body) => {
+  const logInUser = async (body: any) => {
     const json = JSON.stringify(body);
     return await request('https://reqres.in/api/login', 'POST', json);
   }
 
-  const _transformUsers = (users) => {
+  const _transformUsers = (users: any) => {
     return {
       id: users.id,
       name: users.first_name,
@@ -45,7 +45,7 @@ const useService = () => {
     };
   };
 
-  const _transformUnknown = (item) => {
+  const _transformUnknown = (item: any) => {
     return {
       id: item.id,
       name: item.name,

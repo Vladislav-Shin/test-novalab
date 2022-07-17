@@ -2,7 +2,7 @@ import AppHeader from "../../appHeader/AppHeader";
 import Footer from "../../footer/Footer";
 import Unknowns from "../../colors/Colors";
 
-const ColorsPage = () => {
+const ColorsPage:React.FC = () => {
   return (
     <>
       <AppHeader />

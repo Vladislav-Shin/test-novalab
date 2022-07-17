@@ -13,15 +13,13 @@ import { openNotification } from '../../utils';
 import 'antd/dist/antd.css';
 import './form.scss';
 
-const FormRegistration = () => {
+const FormRegistration: React.FC = () => {
   const { registrationUser, logInUser, process, setProcess } = useService();
   const navigate = useNavigate();
   const location = useLocation();
 
-
-  
   const onFinish = (values: any) => {
-    if (location.pathname == '/sign-in') {
+    if (location.pathname === '/sign-in') {
       logInUser(values)
         .then(data => {
           localStorage.setItem('token', data.token);
@@ -48,7 +46,7 @@ const FormRegistration = () => {
         <div className="form__inner">
           <PageHeader
             className="site-page-header"
-            title={location.pathname == '/sign-in' ? 'Log in' : 'Registration'}
+            title={location.pathname === '/sign-in' ? 'Log in' : 'Registration'}
           />
           <Form
             size="large"
@@ -95,10 +93,10 @@ const FormRegistration = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button" loading={process == 'loading' ? true : false}>
-              {location.pathname == '/sign-in' ? 'Log in' : 'Regist'}
+              <Button type="primary" htmlType="submit" className="login-form-button" loading={process === 'loading' ? true : false}>
+                {location.pathname === '/sign-in' ? 'Log in' : 'Regist'}
               </Button>
-              {location.pathname == '/sign-in' ? (
+              {location.pathname === '/sign-in' ? (
                 <NavLink to="/registration">Or register now!</NavLink>
               ) : (
                 <NavLink to="/sign-in">Or sign in now!</NavLink>
